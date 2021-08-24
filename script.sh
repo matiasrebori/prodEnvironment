@@ -24,8 +24,9 @@ virtualenv -q -p $PYTHONPATH venv
 source venv/bin/activate
 # enter project folder
 cd "${PROJECT_PATH}"
-#pip install -r requirements.txt
-#pip install uwsgi
+# install requirements
+pip install -r requirements.txt
+pip install uwsgi
 # collect all Django static files before running nginx
 python3 manage.py collectstatic
 # console message
