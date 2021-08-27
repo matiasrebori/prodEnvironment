@@ -116,6 +116,8 @@ echo "
 #!/bin/bash
 # start nginx
 /etc/init.d/nginx start
+# activate environment
+source venv/bin/activate
 # run django application 
 uwsgi --ini "${PROJECT_NAME}"_uwsgi.ini
 " > init_server.sh
