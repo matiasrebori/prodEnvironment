@@ -115,7 +115,7 @@ write_init_server(){
 echo "
 #!/bin/bash
 # start nginx
-/etc/init.d/nginx start
+sudo /etc/init.d/nginx start
 # activate environment
 source venv/bin/activate
 # run django application 
@@ -129,7 +129,7 @@ write_stop_server(){
 # create script to stop nginx
 echo "
 #!/bin/bash
-/etc/init.d/nginx stop
+sudo /etc/init.d/nginx stop
 " > stop_server.sh
 # add permissions
 chmod +x stop_server.sh
