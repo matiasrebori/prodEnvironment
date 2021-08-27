@@ -115,9 +115,10 @@ echo " ${PROJECT_NAME}_uwsgi.ini writed succesfully "
 
 
 write_static_setting(){
+# append text to settings.py
 echo " import os
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-" > ${PROJECT_PATH}/${PROJECT_NAME}/settings.py
+" >> ${PROJECT_PATH}/${PROJECT_NAME}/settings.py
 }
 
 
