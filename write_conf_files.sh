@@ -8,6 +8,7 @@ ABS_PATH=$(pwd)/"${PROJECT_PATH}"
 ### functions definitions ###
 #############################
 
+
 write_nginx_conf(){
 # write in /etc/nginx/sites-available
 sudo echo "
@@ -55,6 +56,7 @@ echo " ${PROJECT_NAME}_nginx.conf writed succesfully "
 ###end of function 
 }
 
+
 write_uwsgi_params(){
 # write inside project folder
 echo "
@@ -79,6 +81,7 @@ uwsgi_param  SERVER_NAME        \$server_name;
 echo " uwsgi_params writed succesfully "
 ### end of function
 }
+
 
 write_uwsgi_ini(){
 # write .ini 
@@ -109,6 +112,14 @@ vacuum          = true
 echo " ${PROJECT_NAME}_uwsgi.ini writed succesfully "
 ### end of function
 }
+
+
+write_static_setting(){
+echo " import os
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+" > ${PROJECT_PATH}/${PROJECT_NAME}/settings.py
+}
+
 
 write_init_server(){
 # create script to run nginx with django
@@ -143,5 +154,6 @@ chmod +x stop_server.sh
 write_nginx_conf
 write_uwsgi_params
 write_uwsgi_ini
+write_static_setting
 write_init_server
 write_stop_server
