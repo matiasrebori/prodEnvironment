@@ -46,6 +46,10 @@ pip install uwsgi
 # collect all Django static files before running nginx
 echo "recogiendo archivos estaticos"
 python3 manage.py collectstatic
+# create and populate DB
+cd ..
+cd ..
+source create_and_populate_db.sh
 # console message
 printf "\n\n\n"
 #echo " script finished please run init_server.sh, no need chmod "
